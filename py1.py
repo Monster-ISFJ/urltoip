@@ -8,7 +8,7 @@
 import socket
 def urltoip():
    for oneurl in urllist.readlines():       # readlines()py中文件读取函数
-       url = str(oneurl.strip())[7:]
+       url = str(oneurl.strip())[7:]        # 7是切片只获取uri不包含http协议部分，因为我们正常进行ping时也是只包含uri。
        print url
        try:
            ip = socket.gethostbyname(url)    # 函数用域名或主机名获取IP地址
